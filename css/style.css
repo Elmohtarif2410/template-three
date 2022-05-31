@@ -1,0 +1,229 @@
+/*********************************************************************
+************************* Style Global Rouls *************************
+*********************************************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+:root {
+    --main-color: #2196f3;
+    --main-transition: .4s;
+    --main-padding: 100px;
+    --background: #ececec
+}
+
+body {
+    font-family: sans-serif, Tahoma, Geneva, Verdana;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media (min-width: 768px) {
+    .container {width: 750px}
+}
+
+@media (min-width: 992px) {
+    .container {width: 970px}
+}
+
+@media (min-width: 1200px) {
+    .container {width: 1170px}
+}
+
+button {
+    background: none
+}
+
+button:focus {
+    outline: none
+}
+
+ul {
+    list-style: none
+}
+
+/********************** End Style Global Rouls ***********************/
+
+
+
+
+
+/*********************************************************************
+************************** Style to project **************************
+*********************************************************************/
+
+/********************** Start Style Navigation ***********************/
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative
+}
+
+nav .logo h3 {
+    color: var(--main-color);
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+nav .logo h3 span {
+    text-transform: uppercase;
+}
+
+nav ul { /* global list => main - child */
+    display: flex;
+}
+
+nav ul li { /* global list => main - child */
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+nav ul li a { /* global list => main - child */
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--main-transition);
+}
+
+nav ul.main > li > a {
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul.main > li > a:hover {
+    background-color: var(--background);
+    color: var(--main-color)
+}
+
+nav ul.main > li > a:hover:before {
+    left: 0;
+}
+
+nav ul.main > li > a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: var(--main-color);
+    height: 3px;
+    width: 100%;
+    transition: var(--main-transition)
+}
+
+nav .other-links {
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 25px;
+    border-top: 2px solid var(--background);
+    border-bottom: 4px solid var(--main-color);
+    display: none;
+    z-index: 100;
+}
+
+nav .other-links.active {
+    display: flex
+}
+
+nav .other-links img {
+    width: 35%;
+}
+
+nav .other-links ul {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav .other-links ul li {
+    width: 45%;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--background);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav .other-links ul li:last-of-type {
+    border-bottom: none;
+}
+
+nav .other-links ul li a {
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+nav .other-links ul li a:hover::before {
+    left: 0;
+}
+
+nav .other-links ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    background: #fafafa;
+    height: 100%;
+    width: 100%;
+    transition: var(--main-transition)
+}
+
+nav .other-links ul li a i {
+    margin-right: 10px;
+}
+
+/* Media => 0 > 991px */
+@media (max-width: 991px) {
+    nav .other-links img {
+        display: none;
+    }
+
+    nav .other-links ul {
+        width: 100%;
+    }
+}
+
+/* Media => 0 > 767px */
+@media (max-width: 767px) {
+    nav .container {
+        display: block;
+    }
+    nav .container h3 {
+        text-align: center;
+    }
+    nav .container > ul {
+        justify-content: center;
+    } 
+    nav ul li {
+        font-size: 15px;
+    }
+    nav ul.main > li > a {
+        padding: 12px
+    }
+    nav .other-links ul li {
+        width: 100%;
+    }
+}
+
+
+/********************** End Style Navigation ***********************/
