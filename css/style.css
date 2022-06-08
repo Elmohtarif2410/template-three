@@ -13,13 +13,14 @@ html {
 
 :root {
     --main-color: #2196f3;
+    --background: #ececec;
+    --text-color: #666;
     --main-transition: .4s;
     --main-padding: 100px;
-    --background: #ececec
 }
 
 body {
-    font-family: sans-serif, Tahoma, Geneva, Verdana;
+    font-family: 'Work Sans', sans-serif, Tahoma, Geneva, Verdana;
 }
 
 .container {
@@ -225,5 +226,89 @@ nav .other-links ul li a i {
     }
 }
 
-
 /********************** End Style Navigation ***********************/
+
+/********************** Start Style hero ***********************/
+
+header {
+    height: calc(100vh - 71px);
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    background-color: var(--background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-6deg) translateY(-28%) scale(1.2);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74%;
+}
+
+header .text {
+    flex-basis: 55%;
+}
+
+header .text h1 {
+    text-transform: capitalize;
+    color: var(--main-color)
+}
+
+header .text p {
+    line-height: 1.6;
+    font-size: 18px;
+    color: #666;
+    text-align: justify;
+}
+
+header img {
+    margin-top: 20px;
+    width: 37%;
+    animation: top-down 1s linear infinite alternate;
+}
+
+@keyframes top-down {
+    to {
+        transform: translateY(-30px);
+    }
+}
+
+@media (max-width: 991px) {
+    
+    header .container {
+        justify-content: center
+    }
+
+    header .text {
+        flex-basis: 80%
+    }
+
+    header .text h1,
+    header .text p {
+        text-align: center
+    }
+
+    header img {
+        display: none
+    }
+}
+
+@media (max-width: 767px) {
+
+    header .text {flex-basis: 100%;}
+    header .text h1 {font-size: 20px}
+
+}
+
+/********************** End Style hero ***********************/
