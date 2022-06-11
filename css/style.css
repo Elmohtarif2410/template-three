@@ -54,6 +54,11 @@ ul {
     list-style: none
 }
 
+a {
+    text-decoration: none;
+    color: inherit
+}
+
 /********************** End Style Global Rouls ***********************/
 
 
@@ -66,6 +71,11 @@ ul {
 
 /********************** Start Style Navigation ***********************/
 
+nav {
+    box-shadow: 0 0 10px #ececec;
+}
+
+
 nav .container {
     display: flex;
     justify-content: space-between;
@@ -73,13 +83,13 @@ nav .container {
     position: relative
 }
 
-nav .logo h3 {
+nav h3.logo {
     color: var(--main-color);
     font-size: 26px;
     margin: 10px 0;
 }
 
-nav .logo h3 span {
+nav h3.logo span {
     text-transform: uppercase;
 }
 
@@ -231,8 +241,7 @@ nav .other-links ul li a i {
 /********************** Start Style hero ***********************/
 
 header {
-    height: calc(100vh - 71px);
-    min-height: 550px;
+    min-height: calc(100vh - 71px);
     position: relative;
     overflow: hidden;
 }
@@ -246,18 +255,22 @@ header::before {
     z-index: -1;
     width: 100%;
     height: 100%;
-    transform: rotate(-6deg) translateY(-28%) scale(1.2);
+    transform: skewY(-5deg) translateY(-95px)
 }
 
 header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 74%;
+    margin-top: 30px
 }
 
 header .text {
     flex-basis: 55%;
+    min-height: 345px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header .text h1 {
@@ -278,11 +291,41 @@ header img {
     animation: top-down 1s linear infinite alternate;
 }
 
+header .arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 34px;
+    color: var(--main-color);
+    animation: arrow 1s ease-in-out infinite alternate 
+}
+
+/*******   Anmaition   ********/
+
 @keyframes top-down {
     to {
         transform: translateY(-30px);
     }
 }
+
+@keyframes arrow {
+    20% {
+        bottom: 40px
+    }
+    40% {
+        bottom: 30px
+    }
+    60% {
+        bottom: 40px
+    }
+    80% {
+        bottom: 30px
+    }
+
+}
+
+/*******   Responsive   ********/
 
 @media (max-width: 991px) {
     
@@ -305,7 +348,7 @@ header img {
 }
 
 @media (max-width: 767px) {
-
+    header {min-height: calc(100vh - 93px);}
     header .text {flex-basis: 100%;}
     header .text h1 {font-size: 20px}
 
