@@ -61,9 +61,69 @@ a {
 
 /********************** End Style Global Rouls ***********************/
 
+/*********************** commponant styling *************************/
 
+.main-heading {
+    width: fit-content;
+    margin: auto;
+    font-size: 26px;
+    text-transform: uppercase;
+    border: 2px solid;
+    padding: 12px 20px;
+    position: relative;
+    user-select: none;
+    margin-bottom: var(--main-padding);
+}
 
+.main-heading::before,
+.main-heading::after {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--main-transition);
+}
 
+.main-heading::before {
+    left: -25px;
+}
+
+.main-heading::after {
+    right: -25px;
+}
+
+.main-heading:hover {
+    color: white;
+    transition-delay: .6s;
+}
+
+.main-heading:hover::before,
+.main-heading:hover::after {
+    animation: main-heading-anmation var(--main-transition) linear .2s forwards reverse;
+    z-index: -1;
+}
+
+.main-heading:hover::before {
+    left: 0;
+}
+
+.main-heading:hover::after {
+    right: 0;
+}
+
+/*******   Anmaition   ********/
+
+@keyframes main-heading-anmation {
+    from {
+        border-radius: 0%;
+        width: 51%;
+        height: 100%;
+    }
+}
 
 /*********************************************************************
 ************************** Style to project **************************
@@ -135,7 +195,7 @@ nav ul.main > li > a::before {
     transition: var(--main-transition)
 }
 
-nav .other-links {
+nav .mega-menu {
     position: absolute;
     left: 0;
     display: flex;
@@ -143,28 +203,31 @@ nav .other-links {
     align-items: center;
     background-color: white;
     padding: 25px;
-    border-top: 2px solid var(--background);
     border-bottom: 4px solid var(--main-color);
-    display: none;
+    transition: var(--main-transition);
+    top: calc(100% + 50px);
+    z-index: -1;
+    opacity: 0;
+}
+
+nav .mega-menu.active {
+    top: calc(100% + 2px);
+    opacity: 1;
     z-index: 100;
 }
 
-nav .other-links.active {
-    display: flex
-}
-
-nav .other-links img {
+nav .mega-menu img {
     width: 35%;
 }
 
-nav .other-links ul {
+nav .mega-menu ul {
     width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-nav .other-links ul li {
+nav .mega-menu ul li {
     width: 45%;
     color: var(--main-color);
     border-bottom: 1px solid var(--background);
@@ -172,22 +235,22 @@ nav .other-links ul li {
     font-weight: bold;
 }
 
-nav .other-links ul li:last-of-type {
+nav .mega-menu ul li:last-of-type {
     border-bottom: none;
 }
 
-nav .other-links ul li a {
+nav .mega-menu ul li a {
     padding: 15px;
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
 
-nav .other-links ul li a:hover::before {
+nav .mega-menu ul li a:hover::before {
     left: 0;
 }
 
-nav .other-links ul li a::before {
+nav .mega-menu ul li a::before {
     content: "";
     position: absolute;
     top: 0;
@@ -199,17 +262,17 @@ nav .other-links ul li a::before {
     transition: var(--main-transition)
 }
 
-nav .other-links ul li a i {
+nav .mega-menu ul li a i {
     margin-right: 10px;
 }
 
 /* Media => 0 > 991px */
 @media (max-width: 991px) {
-    nav .other-links img {
+    nav .mega-menu img {
         display: none;
     }
 
-    nav .other-links ul {
+    nav .mega-menu ul {
         width: 100%;
     }
 }
@@ -231,7 +294,10 @@ nav .other-links ul li a i {
     nav ul.main > li > a {
         padding: 12px
     }
-    nav .other-links ul li {
+    nav .mega-menu {
+        padding: 10px;
+    }
+    nav .mega-menu ul li {
         width: 100%;
     }
 }
@@ -283,6 +349,7 @@ header .text p {
     font-size: 18px;
     color: #666;
     text-align: justify;
+    max-width: 500px;
 }
 
 header img {
@@ -298,7 +365,11 @@ header .arrow {
     transform: translateX(-50%);
     font-size: 34px;
     color: var(--main-color);
-    animation: arrow 1s ease-in-out infinite alternate 
+    animation: bouncing 1.2s ease-in-out infinite alternate 
+}
+
+header .arrow:hover {
+    animation-play-state: paused ;
 }
 
 /*******   Anmaition   ********/
@@ -309,7 +380,7 @@ header .arrow {
     }
 }
 
-@keyframes arrow {
+/* @keyframes arrow {
     20% {
         bottom: 40px
     }
@@ -322,7 +393,22 @@ header .arrow {
     80% {
         bottom: 30px
     }
+} */
 
+@keyframes bouncing {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        bottom: 30px
+    }
+
+    40%,
+    60% {
+        bottom: 40px
+    }
 }
 
 /*******   Responsive   ********/
@@ -339,7 +425,11 @@ header .arrow {
 
     header .text h1,
     header .text p {
-        text-align: center
+        text-align: center;
+    }
+
+    header .text p {
+        margin: 0 auto;
     }
 
     header img {
@@ -351,7 +441,77 @@ header .arrow {
     header {min-height: calc(100vh - 93px);}
     header .text {flex-basis: 100%;}
     header .text h1 {font-size: 20px}
-
 }
 
-/********************** End Style hero ***********************/
+/*************************** End Style hero **************************/
+
+/********************** Start Style Aritecles ************************/
+
+.articles {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.articles .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px
+}
+
+.articles .cards .card {
+    --paddind-card: 15px;
+    box-shadow: 0 5px 15px #e6e6e7;
+    transition: var(--main-transition);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.articles .cards .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 5px 15px #00003336;
+}
+
+.articles .cards .card:hover .button i {
+    animation: arrow-cards 1s linear infinite reverse
+}
+
+.articles .card img {
+    max-width: 100%;
+}
+
+.articles .card .text {
+    padding: var(--paddind-card);
+}
+
+.articles .card h3 {
+    margin-bottom: var(--paddind-card);
+    text-transform: capitalize;
+}
+
+.articles .card p {
+    line-height: 1.6;
+    color: #777;
+}
+
+.articles .card .button {
+    padding: var(--paddind-card);
+    border-top: 1px solid #e6e6e7;
+    color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles .card .button a {
+    text-transform: capitalize;
+    font-weight: bold
+}
+
+/*******   Anmaition   ********/
+
+@keyframes arrow-cards {
+    from {
+        transform: translateX(10px)
+    }
+}
+
+/************************ End Style Aritecles ***********************/
