@@ -103,7 +103,7 @@ a {
 
 .main-heading:hover::before,
 .main-heading:hover::after {
-    animation: main-heading-anmation var(--main-transition) linear .2s forwards reverse;
+    animation: main-heading-anmation var(--main-transition) linear .2s forwards;
     z-index: -1;
 }
 
@@ -118,7 +118,7 @@ a {
 /*******   Anmaition   ********/
 
 @keyframes main-heading-anmation {
-    from {
+    to {
         border-radius: 0%;
         width: 51%;
         height: 100%;
@@ -460,7 +460,8 @@ header .arrow:hover {
 
 .articles .cards .card {
     --paddind-card: 15px;
-    box-shadow: 0 5px 15px #e6e6e7;
+    background-color: white;
+    box-shadow: 0 5px 15px rgb(0 0 0 / .1);
     transition: var(--main-transition);
     border-radius: 7px;
     overflow: hidden;
@@ -468,11 +469,11 @@ header .arrow:hover {
 
 .articles .cards .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 5px 15px #00003336;
+    box-shadow: 0 5px 15px rgb(0 0 0 / .3);
 }
 
-.articles .cards .card:hover .button i {
-    animation: arrow-cards 1s linear infinite reverse
+.articles .cards .card:hover .link-more i {
+    animation: arrow-cards 1s linear infinite
 }
 
 .articles .card img {
@@ -493,7 +494,7 @@ header .arrow:hover {
     color: #777;
 }
 
-.articles .card .button {
+.articles .card .link-more {
     padding: var(--paddind-card);
     border-top: 1px solid #e6e6e7;
     color: var(--main-color);
@@ -501,7 +502,7 @@ header .arrow:hover {
     justify-content: space-between;
 }
 
-.articles .card .button a {
+.articles .card .link-more a {
     text-transform: capitalize;
     font-weight: bold
 }
@@ -509,7 +510,7 @@ header .arrow:hover {
 /*******   Anmaition   ********/
 
 @keyframes arrow-cards {
-    from {
+    to {
         transform: translateX(10px)
     }
 }
