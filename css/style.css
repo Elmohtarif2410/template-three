@@ -13,10 +13,12 @@ html {
 
 :root {
     --main-color: #2196f3;
+    --secound-color: #e6e6e7;
     --background: #ececec;
     --text-color: #666;
     --main-transition: .4s;
     --main-padding: 100px;
+    --gap-cards: 40px;
 }
 
 body {
@@ -456,7 +458,7 @@ header .arrow:hover {
 .articles .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px
+    gap: var(--gap-cards)
 }
 
 .articles .cards .card {
@@ -530,7 +532,7 @@ header .arrow:hover {
 .gallery .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
+    gap: var(--gap-cards);
 }
 
 .gallery .cards .card {
@@ -591,3 +593,125 @@ header .arrow:hover {
 }
 
 /************************ End Style Gallery ***********************/
+
+/********************** Start Style Features *********************/
+
+.features {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.features .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap-cards)
+}
+
+.features .cards .feature {
+    border: 1px solid var(--secound-color);
+    box-shadow: 0 5px 15px rgb(0 0 0 / .1);
+}
+
+/* features card colors */
+.features .cards .feature:first-of-type {--color: #f44336}
+
+.features .cards .feature:nth-of-type(2) {--color: #009688}
+
+.features .cards .feature:last-of-type {--color: #2196f3}
+
+/* features hover */
+.features .cards .feature:hover .image::after {transform: skewY(30deg)}
+
+.features .cards .feature:hover button {color: white}
+
+.features .cards .feature:hover button::before {left: 0} 
+
+.features .feature .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .feature .image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color);
+    opacity: .5;
+}
+
+.features .feature .image::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -70%;
+    left: 0;
+    background-color: white;
+    transform: skewY(-30deg);
+    transition: var(--main-transition);
+}
+
+.features .feature .image img {max-width: 100%;}
+
+.features .feature .text {
+    text-align: center;
+    padding: 25px; 
+    font-size: 20px;
+}
+
+.features .feature .text h3 {
+    width: fit-content;
+    margin: 0 auto 50px;
+    text-transform: uppercase;
+    font-size: 28px;
+    position: relative;
+}
+
+.features .feature .text h3::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 5px;
+    background: var(--color);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 7px;
+}
+
+.features .feature .text p {
+    color: #777;
+    line-height: 2;
+}
+
+.features .feature .text button {
+    border: none;
+    padding: 10px 25px;
+    color: var(--color);
+    border: 3px solid;
+    border-radius: 7px;
+    margin-top: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+
+.features .feature .text button::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: var(--main-transition);
+}
+
+/*********************** End Style Features **********************/
