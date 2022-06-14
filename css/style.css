@@ -15,7 +15,7 @@ html {
     --main-color: #2196f3;
     --secound-color: #e6e6e7;
     --background: #ececec;
-    --text-color: #666;
+    --text-color: #777;
     --main-transition: .4s;
     --main-padding: 100px;
     --gap-cards: 40px;
@@ -636,7 +636,7 @@ header .arrow:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: -1px; /* becose mistake whine mobile screen*/
     left: 0;
     background-color: var(--color);
     opacity: .5;
@@ -715,3 +715,64 @@ header .arrow:hover {
 }
 
 /*********************** End Style Features **********************/
+
+/******************** Start Style Testimonials *******************/
+
+.testimonials {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--background);
+}
+
+.testimonials .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap-cards)
+}
+
+.testimonials .cards .card {
+    position: relative;
+    background-color: white;
+    padding: 25px;
+}
+
+.testimonials .card img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 10px;
+    background: var(--background);
+    right: -10px;
+    top: 0;
+    transform: translateY(-50%)
+}
+
+.testimonials .card h3 {
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.testimonials .card span {
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.testimonials .card .icon {
+    margin: 8px 0;
+}
+
+.testimonials .card .icon i {
+    color: var(--text-color);
+}
+
+.testimonials .card .icon i.star {
+    color: #ffc107;
+}
+
+.testimonials .card p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/******************** End Style Testimonials *******************/
