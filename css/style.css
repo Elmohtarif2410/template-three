@@ -805,28 +805,25 @@ header .arrow:hover {
 
 .team-members .cards .member:hover h3 {color: var(--text-color)}
 
-.team-members .cards .member:before {
-    content: "";
-    width: calc(100% - 70px);
-    height: 100%;
-    background-color: var(--background);
-    position: absolute;
-    top:0;
-    right: 0;
-    z-index: -1;
-    border-radius: var(--radues);
-}
-
+.team-members .cards .member:before,
 .team-members .cards .member::after {
     content: "";
     width: calc(100% - 70px);
     height: 100%;
-    background-color: #ccc;
     position: absolute;
     top:0;
-    right: calc(-100% + 70px);
     z-index: -1;
     border-radius: var(--radues);
+}
+
+.team-members .cards .member:before {
+    background-color: var(--background);
+    right: 0;
+}
+
+.team-members .cards .member::after {
+    background-color: #ccc;
+    right: calc(-100% + 70px);
     transition: var(--main-transition);
 }
 
@@ -837,6 +834,7 @@ header .arrow:hover {
 .team-members .member .image-icon img {
     width: calc(100% - 70px);
     border-radius: var(--radues);
+    transition: var(--main-transition);
 }
 
 .team-members .member .image-icon i:hover {
@@ -854,19 +852,16 @@ header .arrow:hover {
     color: var(--text-color)
 }
 
-.team-members .member h3,
-.team-members .member p {
-    margin-left: 85px;
-}
-
 .team-members .member h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px 0 12px 85px;
     text-transform: capitalize;
     color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
 }
 
 .team-members .member p {
+    margin-left: 85px;
     color: var(--text-color)
 }
 
