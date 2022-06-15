@@ -867,3 +867,111 @@ header .arrow:hover {
 
 
 /******************** End Style team members *******************/
+
+/******************** Start Style services ********************/
+
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--background);
+}
+
+.services .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap-cards)
+}
+
+.services .cards .service {
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgb(0 0 0 / .2);
+    transition: var(--main-transition);
+    position: relative;
+    counter-increment: number
+}
+
+/* hovering */
+.services .cards .service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgb(0 0 0 / .3);
+}
+
+.services .cards .service:hover::before,
+.services .cards .service:hover::after {
+    width: 50%;
+}
+
+.services .cards .service::before,
+.services .cards .service::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #2196f3;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50);
+    transition: var(--main-transition)
+}
+
+.services .cards .service::before {left: 50%}
+
+.services .cards .service::after {right: 50%}
+
+.services .service .title {
+    padding: 30px 0;
+}
+
+.services .service .title i {
+    color: var(--text-color)
+}
+
+.services .service .title h3 {
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: var(--main-color);
+    font-size: 24px;
+}
+
+.services .service .footer {
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: right;
+    overflow: hidden;
+    position: relative
+}
+
+.services .service .footer::before {
+    content: "";
+    width: 35%;
+    height: 100%;
+    background-color: #d5d5d5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewX(-20deg) translateX(-10px)
+}
+
+.services .service .footer::after {
+    content: "0" counter(number);
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewX(-20deg) translateX(-10px)
+}
+
+.services .service .footer a {
+    color: var(--main-color);
+    text-transform: capitalize;
+}
+
+/********************* End Style services ********************/
