@@ -973,45 +973,45 @@ header .arrow:hover {
 
 /********************* Start Style skills ********************/
 
-.skills {
+.our-skills {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
 
-.skills .content {
+.our-skills .content {
     display: flex;
     align-items: flex-start;
     gap: 50px;
 }
 
-.skills .content img {
+.our-skills .content img {
     width: 45%;
 }
 
-.skills .content .progresses {
+.our-skills .content .skills {
     flex-basis: 55%;
     flex-grow: 1;
 }
 
-.skills .progresses h3 {
+.our-skills .skills h3 {
     text-transform: capitalize;
     font-size: 22px;
     margin: 15px 0;
 }
 
-.skills .progresses .porg {
+.our-skills .skills .porg {
     height: 30px;
     background-color: var(--background);
     position: relative;
 }
 
-.skills .progresses .porg span {
+.our-skills .skills .porg span {
     display: block;
     height: 100%;
     background-color: var(--main-color);
 }
 
-.skills .progresses .porg span::before {
+.our-skills .skills .porg span::before {
     content: attr(data-progress);
     position: absolute;
     right: 0;
@@ -1026,7 +1026,7 @@ header .arrow:hover {
 }
 
 @media (max-width: 991px) {
-    .skills .content img {
+    .our-skills .content img {
         display: none
     }
 }
