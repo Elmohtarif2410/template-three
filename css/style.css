@@ -970,3 +970,65 @@ header .arrow:hover {
 }
 
 /********************* End Style services ********************/
+
+/********************* Start Style skills ********************/
+
+.skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.skills .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.skills .content img {
+    width: 45%;
+}
+
+.skills .content .progresses {
+    flex-basis: 55%;
+    flex-grow: 1;
+}
+
+.skills .progresses h3 {
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.skills .progresses .porg {
+    height: 30px;
+    background-color: var(--background);
+    position: relative;
+}
+
+.skills .progresses .porg span {
+    display: block;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.skills .progresses .porg span::before {
+    content: attr(data-progress);
+    position: absolute;
+    right: 0;
+    top: calc(-100% - 10px);
+    padding: 4px;
+    border: 1px solid var(--secound-color);
+    border-radius: 4px;
+    color: var(--main-color);
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .skills .content img {
+        display: none
+    }
+}
+
+/********************* End Style skills ********************/
