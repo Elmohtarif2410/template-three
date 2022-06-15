@@ -19,6 +19,7 @@ html {
     --main-transition: .4s;
     --main-padding: 100px;
     --gap-cards: 40px;
+    --radues: 7px;
 }
 
 body {
@@ -776,3 +777,98 @@ header .arrow:hover {
 }
 
 /******************** End Style Testimonials *******************/
+
+/******************** Start Style team members *******************/
+
+.team-members {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.team-members .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap-cards)
+}
+
+.team-members .cards .member {
+    position: relative;
+    padding: 50px 0 25px;
+    overflow: hidden;
+}
+
+/* member hovering */
+
+.team-members .cards .member:hover::after {right: 0}
+
+.team-members .cards .member:hover img {filter: grayscale(100%);}
+
+.team-members .cards .member:hover h3 {color: var(--text-color)}
+
+.team-members .cards .member:before {
+    content: "";
+    width: calc(100% - 70px);
+    height: 100%;
+    background-color: var(--background);
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: -1;
+    border-radius: var(--radues);
+}
+
+.team-members .cards .member::after {
+    content: "";
+    width: calc(100% - 70px);
+    height: 100%;
+    background-color: #ccc;
+    position: absolute;
+    top:0;
+    right: calc(-100% + 70px);
+    z-index: -1;
+    border-radius: var(--radues);
+    transition: var(--main-transition);
+}
+
+.team-members .member .image-icon {
+    display: flex;
+}
+
+.team-members .member .image-icon img {
+    width: calc(100% - 70px);
+    border-radius: var(--radues);
+}
+
+.team-members .member .image-icon i:hover {
+    color: var(--main-color)
+}
+
+.team-members .member .image-icon .icon {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+    color: var(--text-color)
+}
+
+.team-members .member h3,
+.team-members .member p {
+    margin-left: 85px;
+}
+
+.team-members .member h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--main-color);
+}
+
+.team-members .member p {
+    color: var(--text-color)
+}
+
+
+/******************** End Style team members *******************/
