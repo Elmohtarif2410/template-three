@@ -1032,3 +1032,169 @@ header .arrow:hover {
 }
 
 /********************* End Style skills ********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************* Start Style section footer ********************/
+
+.footer {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: #191919;
+    color: #999;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--gap-cards);
+}
+
+.footer .info h2 {
+    text-transform: capitalize;
+    color: white;
+    font-size: 34px;
+}
+
+.footer .info .icon {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer .info .icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131;
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+    transition: var(--main-transition);
+    color: #b9b9b9
+}
+
+.footer .info .icon a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.footer .info p {
+    line-height: 1.6;
+}
+
+.footer .links li:not(:last-of-type) {
+    border-bottom: 2px solid #313131;
+}
+
+.footer .links a {
+    display: block;
+    padding: 15px 0;
+    position: relative;
+    transition: var(--main-transition);
+}
+
+.footer .links a:hover {
+    transform: translateX(15px);
+    color: white
+}
+
+.footer .links a::before {
+    content: "\F101";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    margin-right: 8px;
+    color: var(--main-color)
+}
+
+.footer .address article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.footer .address i {
+    font-size: 26px;
+    margin-right: 15px;
+    color: var(--main-color)
+}
+
+.footer .address p {
+    line-height: 1.6;
+}
+
+.footer .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 5px;
+}
+
+.footer .projects img {
+    width: 80px;
+    height: 80px;
+    border: 3px solid white
+}
+
+@media (max-width: 767px) {
+    .footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .info .icon {
+        justify-content: center;
+    }
+
+    .footer .links a {
+        min-width: 300px;
+    }
+
+    .footer .address article {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/********************* End Style section footer  ********************/
+
+/********************* Start Style footer  ********************/
+
+body > footer {
+    padding: 30px 15px;
+    background-color: #191919;
+    text-align: center;
+    color: var(--secound-color);
+    text-transform: capitalize;
+    border-top: 3px solid #313131;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+body > footer a {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+}
+
+body > footer a:hover {color: var(--main-color)}
+
+/********************* End Style footer  ********************/
