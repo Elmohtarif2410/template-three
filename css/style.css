@@ -1125,6 +1125,41 @@ header .arrow:hover {
 
 /********************* End Style It Works ********************/
 
+/********************* Start Style Events ********************/
+
+.events {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.events .info {
+    display: flex;
+    align-items: center;
+}
+
+.events .info > img {
+    width: 40%;
+}
+
+.events .info .content .timer {
+    display: flex;
+}
+
+.events .info .content .timer section {
+    padding: 10px
+}
+
+.events .info .content h3 {
+
+}
+
+.events .info .content p {
+    
+}
+
+
+/********************* End Style Events ********************/
+
 
 
 
