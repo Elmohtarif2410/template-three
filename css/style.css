@@ -1143,20 +1143,123 @@ header .arrow:hover {
 
 .events .info .content .timer {
     display: flex;
+    justify-content: center;
+    gap: 10px
 }
 
 .events .info .content .timer section {
-    padding: 10px
+    border: 1px solid #e7e7e7;
+    border-radius: var(--radues);
+    box-shadow: 0 0 3px rgb(0 0 0 / .1);
+    flex-basis: 80px;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events .info section h4 {
+    margin: 15px 0;
+    font-size: 34px;
+    color: var(--main-color)
+}
+
+.events .info section span {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 0;
+    width: 100%;
+    border-top: 2px solid #e7e7e7;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--text-color)
 }
 
 .events .info .content h3 {
-
-}
-
-.events .info .content p {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 32px;
+    margin: 25px 0;
     
 }
 
+.events .info .content p {
+    text-align: center;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.events form {
+    width: 700px;
+    margin: 50px auto 0;
+    border: 1px solid #e7e7e7;
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 100px;
+    background-color: #f6f6f6
+}
+
+.events form input {
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 100px;
+}
+
+.events form input[type="email"] {
+    font-weight: normal;
+    flex-grow: 1;
+    caret-color: var(--main-color);    
+}
+
+.events form input[type="email"]::placeholder {
+    transition: var(--main-transition);
+}
+
+.events form input[type="email"]:focus::placeholder {
+    color: white
+}
+
+.events form input[type="submit"] {
+    font-weight: bold;
+    color: white;
+    background-color: #03a9f4;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.events form input[type="submit"]:hover {
+    color: #f6f6f6;
+    background-color: var(--main-color);
+}
+
+/* Media Quires */
+
+@media (max-width: 991px) {
+    .events .info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .events .info img {
+        display: none;
+    }
+    
+    .events form {
+        flex-direction: column;
+        width: auto;
+        border-radius: 0;
+    }
+
+    .events form input {
+        border-radius: 0;
+    }
+}
 
 /********************* End Style Events ********************/
 
