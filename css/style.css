@@ -1263,6 +1263,32 @@ header .arrow:hover {
 
 /********************* End Style Events ********************/
 
+/********************* Start Style plans *******************/
+
+.plans {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--background);
+}
+
+.plans .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap-cards);
+}
+
+.plans .cards .plan {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(0 0 0 / .3);
+}
+
+/********************* End Style plans ********************/
+
+
+
 
 
 
